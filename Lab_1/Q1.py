@@ -1,20 +1,19 @@
 #part 1
+try:
+  num = list(map(float, input("Enter as many values as you'd like here: ").split() ))
+  # print(num)
 
-num = list(map(float, input("Enter as many values as you'd like here: ").split()))
-
-if len(num) != 0:
-    print("I am inside of the main loop!")
-    
-    i = 0
-    total = 0
-    while i <= len(num)-1:
-        print(num[i])
-        total = total + num[i]
-        i = i + 1
-
-
-    print(total)
+  if len(num) < 2:
+    print("Please enter more than 1 number!")
+except:
+    print("Please enter a number!")
 else:
-    print("Please enter values when prompted!")
-
-
+  if len(num) >= 2:
+  
+      i = 0
+      total = 0
+      while i <= len(num)-1:
+          # print(num[i])
+          total = total + num[i]
+          i = i + 1
+      print("Total sum of your enters values: ",total)
