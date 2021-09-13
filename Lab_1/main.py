@@ -1,8 +1,18 @@
 #part 1
 
-print("Please enter as many values as you'd like each seperated by a single space")
-num = input("Enter your values here:" )
+num = list(map(int, input("Enter as many values as you'd like here: ").split()))
+if num != None:
+    
+    i = 0
+    total = 0
+    while i <= len(num)-1:
+        print(num[i])
+        total = total + num[i]
+        i = i + 1
 
 
+    print(total)
+else:
+    print("Please enter values when prompted!")
 
-print(num)
+
