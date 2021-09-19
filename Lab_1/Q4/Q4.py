@@ -17,7 +17,7 @@ class schedule_template:
     def printSchedule1(self):
 
         if self._scheduleNum == 1:
-            line = open("Lab_1/classSchedule.txt", "w")
+            line = open("Lab_1/Q4/classSchedule.txt", "w")
 
             line.write("COURSE " + str(self._scheduleNum) + ": " + self._courseDept + self._courseNum + ": " +  self._courseName + "\n")
             line.write("Number of Credits: " + self._credits + "\n")
@@ -30,7 +30,7 @@ class schedule_template:
     def printSchedule2(self):
 
         if self._scheduleNum == 2:
-            line = open("Lab_1/classSchedule.txt", "a+")
+            line = open("Lab_1/Q4/classSchedule.txt", "a+")
 
             line.write("COURSE " + str(self._scheduleNum) + ": " + self._courseDept + self._courseNum + ": " +  self._courseName + "\n")
             line.write("Number of Credits: " + self._credits + "\n")
@@ -42,7 +42,7 @@ class schedule_template:
 
     def printSchedule3(self):
         if self._scheduleNum == 3:
-            line = open("Lab_1/classSchedule.txt", "a+")
+            line = open("Lab_1/Q4/classSchedule.txt", "a+")
 
             line.write("COURSE " + str(self._scheduleNum) + ": " + self._courseDept + self._courseNum + ": " +  self._courseName + "\n")
             line.write("Number of Credits: " + self._credits + "\n")
@@ -55,13 +55,13 @@ class schedule_template:
     
 
 class findFirstLine:    #returns the first line
-    with open("Lab_1/classesInput.txt", "r") as line:
+    with open("Lab_1/Q4/classesInput.txt", "r") as line:
         first_line = line.readline()
     line.close()
 
 
 
-with open("Lab_1/classesInput.txt", "r+") as readFile:
+with open("Lab_1/Q4/classesInput.txt", "r+") as readFile:
     amtSchedules = findFirstLine()  #returns 3
     text = readFile.readlines()
     

@@ -3,12 +3,12 @@ class gradeMachine(dict):
     def __init__(self):
         self = dict()
     def addJson(self, data, key):
-        with open("Lab_1/grades.txt", "r+") as totFile:
+        with open("Lab_1/Q5/grades.txt", "r+") as totFile:
             totFile.truncate(0)
             totFile.close()
 
 
-        with open("Lab_1/grades.txt", "a") as file:
+        with open("Lab_1/Q5/grades.txt", "a") as file:
             file.write("{\n")
             for key in data:
                 file.write(f'  "{key}":{data[key]},\n')
@@ -51,7 +51,7 @@ class gradeMachine(dict):
 
 
 #Start here "Main"
-with open("Lab_1/grades.txt", "r+") as file:
+with open("Lab_1/Q5/grades.txt", "r+") as file:
     data = {}  #imports grades.txt into a dictionary
 
     dictClass = gradeMachine()

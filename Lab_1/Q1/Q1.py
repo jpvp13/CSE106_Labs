@@ -1,6 +1,6 @@
 #part 1
 try:
-  num = list(map(float, input("Enter as many values as you'd like here: ").split() ))
+  num = list(map(float, input("Enter as many values as you'd like here seperated by a space: ").split() ))
   # print(num)
 
   if len(num) < 2:
