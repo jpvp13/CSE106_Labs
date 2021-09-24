@@ -64,7 +64,7 @@ List3 = [0, 12, 45.21 ,34, 99.91]
 
 array3 = np.array(List3)
 
-print("The value of list3 in fahrenheit are: " , 5*(array3)/9 - 5*32/9)
+print("The value of list3 in fahrenheit are: " , (5*(array3))/9 - (5*32)/9)
 
 
 print("_________________________________________________")
