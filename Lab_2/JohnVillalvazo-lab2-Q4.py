@@ -1,11 +1,9 @@
-from matplotlib import colors
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 
 data = pd.read_csv('weather_data.txt')
 
-# lineX = data.plot.line()
+#! this prints the line graph of max vs min temps
 
 ax =plt.gca()
 ax.minorticks_on()
@@ -15,9 +13,13 @@ plt.title("Graph showing Max and Min Temps over a year")
 plt.grid()
 
 
-# plt.plot(x , y)
 
-# data.plot(y, kind = 'line', color = 'b')
+#! this prints the histgram of actual precipiation
+data.hist('actual_precipitation', histtype= 'bar', bins = 6 )
+plt.title("Graph showing actual precipitation")
+# plt.grid()
+plt.style.use('ggplot')
+
 
 
 plt.show()

@@ -12,11 +12,11 @@ print("_________________________________________________")
 print(" (B) Create and print a 8x8 matrix and fill it with a checkerboard pattern\n")
 
 #! (B)
-checkerArr = np.ones((8,1), dtype = int)
+checkerArr = np.ones((8,8), dtype = int)
 
 # i, j = 0
-checkerArr[1::2,::2] = 0    #??
-checkerArr[::2,1::2] = 0    #??
+checkerArr[0:8:2,0:8:2] = 0    #! [row[start 0:end 8: step 2], column[start 0:end 8:step 2]]
+checkerArr[1:9:2,1:9:2] = 0    #! [row[start 1:end 8:step 2], colum[start 1:end 8:step 2]]
 
 
 # final = bitget(times +1, 1)
