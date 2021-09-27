@@ -1,0 +1,83 @@
+body { /*This is for the home page background color */
+    background-color: #DECDB0;
+}
+
+/*This is for the nav bar ######################################*/
+ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightsteelblue;
+    border: 1px solid;
+  }
+  
+   li {
+    float: left;
+    border-right: 1px solid;
+  }
+
+  li:last-child {
+      border-right: none;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 30px; /*This is what makes the boxes reach the end of the screen */
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #C5DEB0;
+  }
+
+/*This is for the nav bar #######################################*/
+
+/*This is for the header #######################################*/
+
+.header {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* border: 2px solid black; */
+    text-align: center;
+}
+
+/*This is for the header #######################################*/
+
+
+/*This is for the left column #######################################*/
+
+.column {
+    float: left;
+    width: 50%;
+}
+.column p {
+  font-family: 'Times New Roman', Times, serif;
+
+  font-size: 20px;
+}
+
+h2 {
+  padding-left: 100px;
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*This is for the right column #######################################*/
+#mypc img {
+  width: 400px;
+  height: 500px;
+  object-fit: contain;
+  position:absolute;
+  top: 150px;
+  left: 580px;;
+}

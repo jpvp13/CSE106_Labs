@@ -15,6 +15,8 @@ print("The highest value in actual precipitation is: ", highest)
 
 findDate = data.loc[:,"actual_precipitation"] == highest 
 
+# print(findDate)
+
 print("The date that had the highest acutal precipitation is: ",  data.loc[findDate, "date"])
 
 
