@@ -3,39 +3,40 @@ body { /*This is for the home page background color */
 }
 
 /*This is for the nav bar ######################################*/
-ul {
-    
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: lightsteelblue;
-    border: 1px solid;
-  }
-  
-   li {
-    float: left;
-    border-right: 1px solid;
-  }
 
-  li:last-child {
-      border-right: none;
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  /* margin-left:300px; */
+  margin-right: 22.8%;
+  margin-left: 22%;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
   
-  li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 30px; /*This is what makes the boxes reach the end of the screen */
-    text-decoration: none;
-  }
+}
+
   
-  /* Change the link color on hover */
-  li a:hover {
-    background-color: #C5DEB0;
-  }
+/* Change the link color on hover */
+li a:hover {
+  background-color: #C5DEB0;
+}
 
 /*This is for the nav bar #######################################*/
+
+
 
 /*This is for the header #######################################*/
 
@@ -53,15 +54,16 @@ ul {
 
 .column {
     float: left;
+    margin-left:5%;
     width: 50%;
 }
 .column p {
   font-family: 'Times New Roman', Times, serif;
 
-  font-size: 20px;
+  font-size: 25px;
 }
 
-h2 {
+h2{
   padding-left: 100px;
 }
 
@@ -74,10 +76,17 @@ h2 {
 
 /*This is for the right column #######################################*/
 #mypc img {
-  width: 400px;
-  height: 500px;
+  max-width: 400px;
+  max-height: 500px;
   object-fit: contain;
   position:absolute;
-  top: 150px;
-  left: 580px;;
+  top: 20%;
+  left: 65%;
+}
+
+
+table,th, td {
+  padding: 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
