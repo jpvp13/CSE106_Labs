@@ -3,21 +3,22 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, intial-scale = 1">
+    <meta name="viewport" content="width=device-width">
     <title> Beginner Guide on Streamer Gear</title>
 
     <link href="index.css" rel="stylesheet" />
 </head>
 
 <body>
+    <!--This is the titel of the page-->
     <div class="header">
         <h1>Beginners Guide to Streamer Gear</h1>
-        <!--This is the titel of the page-->
     </div>
-    <div id = "navBar">
+
+    <!--This list is edited in the CSS-->
+    <div id="navBar">
         <ul>
-            <!--This list is edited in the CSS-->
-            <li> <a href="index.html">Home</a></li>
+            <li> <a class="active" href="index.html">Home</a></li>
             <li><a href="desks.html">Desk Suggestions</a></li>
             <li><a href="cameras.html">Camera Suggestions</a></li>
             <li><a href="computers.html">Computer Spec Suggestions</a></li>
@@ -25,49 +26,100 @@
         </ul>
     </div>
 
-
-    <div class="row">
-        <div class="column">
-            <h2>Purpose of this site</h2>
-            <p>Welcome to the first iteration of of this 'How-To' site that is geared for
+    <!-- This is where the text for the welcome (home) page is -->
+    <div class = "topBox">
+        <h2 id = "title" ><strong><em>Purpose of this site</em></strong></h2>
+            <p>
+                Welcome to the first iteration of of this 'How-To' site that is geared for
                 those who are new to streaming or those who want to see what new innovations
                 there are in the realm of streamers. As the ability to stream becomes easier
                 and easier for anyone to particpate in, I have compiled a range of information
                 to help further make the search for equipment and components easier for research and find.
+                <p>
+                    On this page, a picture of my personal daily driver & streaming PC is shown! This site is supposed to
+                    help you figure out what components are a bang for the buck they cost as well as one-stop-show for recommendations
+                    on items such as desks, chairs, microphones and stream cameras!
+                </p>
             </p>
-            <div id="mypc">
-                <img src = "MyPC.jpg">
-            </div>
-        </div>
+        
+            
+    </div>
+    <!-- This is where the photo lives -->
+    <div>
+        <img id="container" src="MyPC.jpg" alt="Personal PC">
     </div>
 
+    <!-- This is where the title to the table lives -->
     <div>
-        <table class = "myspecs">
+    
+    </div>
+
+    <!-- This is where my specs table lives -->
+    <div>
+        <table class="myspecs">
             <tr>
-              <th>Brand</th>
-              <th>Model</th>
-              <th>Cost</th>
-              <th>Link</th>
+                <th></th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Cost</th>
+                <th>Link</th>
             </tr>
             <tr>
-              <td>MSI</td>
-              <td>X470 Gaming Plus Motherboard</td>
-              <td><strike>$119.99</strike> ~ sale for $99.9</td>
-              <td><a href="https://www.amazon.com/MSI-Performance-Graphics-Motherboard-X470GPLMAX/dp/B07Y468HV3/ref=sr_1_2?dchild=1&keywords=x470+gaming+plus+motherboard&qid=1632770844&sr=8-2" target="_blank"> Link To Product</a></td>
+                <td><strong>Motherboard</strong></td>
+                <td>MSI</td>
+                <td>X470 GAMING PLUS Max</td>
+                <td><strike>$119.99</strike> on sale $99.9</td>
+                <td><a href="https://www.amazon.com/MSI-Performance-Graphics-Motherboard-X470GPLMAX/dp/B07Y468HV3/ref=sr_1_2?dchild=1&keywords=x470+gaming+plus+motherboard&qid=1632770844&sr=8-2"
+                        target="_blank"> Link To Product</a></td>
             </tr>
             <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
+                <td><strong>CPU</strong></td>
+                <td>AMD</td>
+                <td>Ryzen 5 2600</td>
+                <td>$198.72 <em>(varies)</em></td>
+                <td><a href="https://www.newegg.com/amd-ryzen-5-2600/p/N82E16819113496"
+                        target="_blank"> Link To Product</a></td>
             </tr>
-          </table>
+            <tr>
+                <td><strong>CPU Fan</strong></td>
+                <td>AMD</td>
+                <td>Wraith Prism RGB Cooler Fan</td>
+                <td>$33.95 <em>(varies)</em></td>
+                <td><a href="https://www.newegg.com/p/13C-0096-00005?Description=wraith%20prism&cm_re=wraith_prism-_-9SIAGTU7GD6728-_-Product"
+                        target="_blank"> Link To Product</a></td>
+            </tr>
+            <tr>
+                <td><strong>RAM</strong></td>
+                <td>G.SKILL</td>
+                <td>Aegis 16GB Memory Kit</td>
+                <td>$67.99</td>
+                <td><a href="https://www.newegg.com/g-skill-16gb-288-pin-ddr4-sdram/p/N82E16820232884?Description=G.skill%20aegis%203200MGZ&cm_re=G.skill_aegis%203200MGZ-_-20-232-884-_-Product&quicklink=true"
+                        target="_blank"> Link To Product</a></td>
+            </tr>
+            <tr>
+                <td><strong>GPU</strong></td>
+                <td>ASUS</td>
+                <td>Dual GeForce GRX 1070</td>
+                <td>$329 <em>(orginal MSRP, currently being scalped)</em></td>
+                <td><a href="https://www.newegg.com/amd-ryzen-5-2600/p/N82E16819113496"
+                        target="_blank"> Link To Product</a></td>
+            </tr>
+            <tr>
+                <td><strong>PSU</strong></td>
+                <td>EVGA</td>
+                <td>500 W1, 80+ WHITE 500W Power Supply</td>
+                <td><strike>$54.99</strike> on sale $24.99 <em></em></td>
+                <td><a href="https://www.amazon.com/gp/product/B00H33SFJU/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1"
+                        target="_blank"> Link To Product</a></td>
+            </tr>
+        </table>
     </div>
 
 </body>
 
 </html>
 
-
 <!-- References
 ~ https://www.w3schools.com/html/html_css.asp
+~ https://css-tricks.com/boxes-fill-height-dont-squish/
  -->
