@@ -1,0 +1,44 @@
+body { /*This is for the home page background color */
+    background-color: #DECDB0;
+}
+
+/*This is for the nav bar ######################################*/
+
+li a:hover { /*will highlight box black when clicked on to show where user is*/
+  background-color: grey;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #DAA900;;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
+
+li {
+  float: left;
+  width: 20%;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  
+}
+
+/*This is for the header #######################################*/
+
+.header {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* border: 2px solid black; */
+    text-align: center;
+}
+
+/*This is for the left box #######################################*/
