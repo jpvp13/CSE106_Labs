@@ -32,6 +32,12 @@ text-decoration: none;
 
 }
 
+/* Add a color to the active/current link */
+.navBar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
 /*This is for the header #######################################*/
 
 .header {
