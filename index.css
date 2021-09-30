@@ -1,83 +1,196 @@
+
 body { /*This is for the home page background color */
-    background-color: #DECDB0;
+  background-color: #DECDB0;
 }
 
 /*This is for the nav bar ######################################*/
+
+li a:hover { /*will highlight box black when clicked on to show where user is*/
+background-color: grey;
+}
+
+
 ul {
-    
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: lightsteelblue;
-    border: 1px solid;
-  }
-  
-   li {
-    float: left;
-    border-right: 1px solid;
-  }
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #DAA900;;
+box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+}
 
-  li:last-child {
-      border-right: none;
-  }
-  
-  li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 30px; /*This is what makes the boxes reach the end of the screen */
-    text-decoration: none;
-  }
-  
-  /* Change the link color on hover */
-  li a:hover {
-    background-color: #C5DEB0;
-  }
+li {
+float: left;
+width: 20%;
+}
 
-/*This is for the nav bar #######################################*/
+li a {
+display: block;
+color: white;
+text-align: center;
+padding: 12px 16px;
+text-decoration: none;
+
+}
 
 /*This is for the header #######################################*/
 
 .header {
-    color: black;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    /* border: 2px solid black; */
-    text-align: center;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* border: 2px solid black; */
+  text-align: center;
 }
 
-/*This is for the header #######################################*/
+/*This is for the left box #######################################*/
 
-
-/*This is for the left column #######################################*/
-
-.column {
-    float: left;
-    width: 50%;
-}
-.column p {
-  font-family: 'Times New Roman', Times, serif;
-
-  font-size: 20px;
+#title  {
+font-size: 40px;
+margin-top: 10%;
+text-align: center;
 }
 
-h2 {
-  padding-left: 100px;
+div.topBox {
+/* overflow: auto ; */
+/* overflow-y: scroll; */
+font-size: 24px;
+position:absolute ;
+
+min-height: 10px;
+width: 45%;
+height: 45%;
+margin-left: 7%;
+margin-top: 5%;
+padding: 1%;
+/* margin-bottom: 95%; */
+/* margin-right: 90%; */
+
+
+background-color: #ccc;
+background-size: cover;
+/* background-repeat: repeat; */
+/* border: 3px solid blue; */
+} 
+
+
+/*This is for the picture on right #######################################*/
+
+
+#container {
+width: 25%;
+height: 30%;
+margin-left: 60%;
+margin-top: 5%;
 }
 
+/* This fixes the image to the right and text to the left while resizing ###############*/
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+
+/* This section covers the table ###############*/
+
+table,th, td {
+margin-top: 5%;
+margin-left: 5%;
+margin-bottom: 5%;
+padding: 10px;
+border: 1px solid black;
+/* border-collapse: collapse; */
 }
 
-/*This is for the right column #######################################*/
-#mypc img {
-  width: 400px;
-  height: 500px;
-  object-fit: contain;
-  position:absolute;
-  top: 150px;
-  left: 580px;;
+/* This section covers the table ###############*/
+
+.fill-height-or-more {
+display: flex;
+flex-direction: column;
+/* min-width: 100px;
+min-height: 10px; */
+}
+
+.fill-height-or-more > div {
+/* flex : 1; */
+
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+/*This is for the picture on right #######################################*/
+
+
+#container {
+  width: 25%;
+  height: 30%;
+  margin-left: 60%;
+  margin-top: 5%;
+}
+
+/* This fixes the image to the right and text to the left while resizing ###############*/
+
+
+/* This section covers the table ###############*/
+
+#tableTitle {
+  font-size:xx-large;
+  font-style: oblique;
+  color: red;
+  text-align: center;
+  margin-top: 4%;
+  /* margin-left: 30%;
+  margin-top: 5%;
+  /* margin-bottom: 10%; */
+}
+
+table,th, td {
+  margin-top: 0%;
+  margin-left: 5%;
+  /* padding: 10px; */
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.myspecs {
+  margin-right: 5%;
+}
+
+/* This section covers the table ###############*/
+
+
+
+/* Callout box - fixed position at the bottom of the page */
+.callout {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  margin-left: 20px;
+  max-width: 300px;
+}
+
+/* Callout header */
+.callout-header {
+  padding: 25px 15px;
+  background: #555;
+  font-size: 30px;
+  color: white;
+}
+
+/* Callout container/body */
+.callout-container {
+  padding: 15px;
+  background-color: #ccc;
+  color: black
+}
+
+/* Close button */
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Change color on mouse-over */
+.closebtn:hover {
+  color: lightgrey;
 }
