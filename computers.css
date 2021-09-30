@@ -46,65 +46,101 @@ text-decoration: none;
   /* border: 2px solid black; */
   text-align: center;
 }
+/*This is for the header #######################################*/
+
+/*This is for the description #######################################*/
 
 
+#title  {
+  font-size: 60px;
+  margin-top: 4%;
+  text-align: center;
+  }
+  
+  .box1 {
+    font-size: 25px;
+    margin-top: 10%;
+  }
+  .grid-container1 {
+    display:grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    /* background-color: #2196F3; */ /*~testing*/
+    padding: 10px;
+    margin-left: 5%;
+  }
+  
+  .grid-container1 > div {
+    /* background-color: rgba(255, 255, 255, 0.8); ~testing */
+    text-align: center;
+    padding: 20px 0;
+    /* font-size: 30px; */
+  }
+  
+  
+  /*This is for the picture on right #######################################*/
+  
+  #container {
+    margin-left: 10%;
+    text-align: center;
+    width: 60%;
+    height: 60%;
+  }
 
+/*This is for the description #######################################*/
 
+/*This is for the embedded video #######################################*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Callout box - fixed position at the bottom of the page */
-.callout {
-  position: fixed;
-  bottom: 35px;
-  right: 20px;
-  margin-left: 20px;
-  max-width: 300px;
+#linusVideo {
+  width: 50%;
+  height: 600px;
+  margin-right: 40%;
 }
 
-/* Callout header */
-.callout-header {
-  padding: 25px 15px;
-  background: #555;
-  font-size: 30px;
-  color: white;
+ #JayzVideo {
+  width: 50%;
+  height: 600px;
+  margin-right: 40%;
+} 
+
+/* .video {
+  width: 50%;
+  height: 50%;
+} */
+.topBox2 {
+  font-size: 25px;
+
+  /* margin-bottom: 40%; */
 }
 
-/* Callout container/body */
-.callout-container {
-  padding: 15px;
-  background-color: #ccc;
-  color: black
+.grid-container2 {
+  display:contents;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  grid-gap: 10px;
+  /* background-color: #2196F3; */ /*~testing*/
+  padding: 10px;
+  /* margin-right: 90%; */
+ 
 }
 
-/* Close button */
-.closebtn {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
+.grid-container2 > div {
+  /* background-color: rgba(255, 255, 255, 0.8); ~testing */
+  text-align: center;
+  padding: 20px 0;
+  /* font-size: 30px; */
+  
 }
 
-/* Change color on mouse-over */
-.closebtn:hover {
-  color: lightgrey;
-}
+
+
+/*This is for the embedded video #######################################*/
+
+
+
+
+
+
+
+

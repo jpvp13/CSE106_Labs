@@ -50,59 +50,42 @@ text-decoration: none;
 /*This is for the left box #######################################*/
 
 #title  {
-font-size: 40px;
-margin-top: 10%;
+font-size: 60px;
+margin-top: 4%;
 text-align: center;
 }
 
-div.topBox {
-/* overflow: auto ; */
-/* overflow-y: scroll; */
-font-size: 24px;
-position:absolute ;
+.box1 {
+  font-size: 30px;
+}
+.grid-container {
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  /* background-color: #2196F3; */ /*~testing*/
+  padding: 10px;
+}
 
-min-height: 10px;
-width: 45%;
-height: 45%;
-margin-left: 7%;
-margin-top: 5%;
-padding: 1%;
-/* margin-bottom: 95%; */
-/* margin-right: 90%; */
-
-
-background-color: #ccc;
-background-size: cover;
-/* background-repeat: repeat; */
-/* border: 3px solid blue; */
-} 
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */ /*~testing*/
+  text-align: center;
+  padding: 20px 0;
+  /* font-size: 30px; */
+}
 
 
 /*This is for the picture on right #######################################*/
 
-
 #container {
-width: 25%;
-height: 30%;
-margin-left: 60%;
-margin-top: 5%;
+  margin-left: 10%;
+  text-align: center;
+  width: 60%;
+  height: 60%;
 }
 
 /* This fixes the image to the right and text to the left while resizing ###############*/
 
-
-/* This section covers the table ###############*/
-
-table,th, td {
-margin-top: 5%;
-margin-left: 5%;
-margin-bottom: 5%;
-padding: 10px;
-border: 1px solid black;
-/* border-collapse: collapse; */
-}
-
-/* This section covers the table ###############*/
 
 .fill-height-or-more {
 display: flex;
@@ -119,18 +102,6 @@ justify-content: center;
 flex-direction: column;
 }
 
-/*This is for the picture on right #######################################*/
-
-
-#container {
-  width: 25%;
-  height: 30%;
-  margin-left: 60%;
-  margin-top: 5%;
-}
-
-/* This fixes the image to the right and text to the left while resizing ###############*/
-
 
 /* This section covers the table ###############*/
 
@@ -146,56 +117,16 @@ flex-direction: column;
 }
 
 table,th, td {
-  margin-top: 0%;
+  margin-top: 5%;
   margin-left: 5%;
-  /* padding: 10px; */
+  margin-bottom: 5%;
+  padding: 10px;
   border: 1px solid black;
   border-collapse: collapse;
-}
+  }
 
 .myspecs {
   margin-right: 5%;
 }
 
 /* This section covers the table ###############*/
-
-
-
-/* Callout box - fixed position at the bottom of the page */
-.callout {
-  position: fixed;
-  bottom: 35px;
-  right: 20px;
-  margin-left: 20px;
-  max-width: 300px;
-}
-
-/* Callout header */
-.callout-header {
-  padding: 25px 15px;
-  background: #555;
-  font-size: 30px;
-  color: white;
-}
-
-/* Callout container/body */
-.callout-container {
-  padding: 15px;
-  background-color: #ccc;
-  color: black
-}
-
-/* Close button */
-.closebtn {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-/* Change color on mouse-over */
-.closebtn:hover {
-  color: lightgrey;
-}
