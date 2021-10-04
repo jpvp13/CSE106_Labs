@@ -10,14 +10,23 @@ background-color: grey;
 }
 
 
-ul {
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #DAA900;;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  } 
+
+/* ul {
 list-style-type: none;
 margin: 0;
 padding: 0;
 overflow: hidden;
 background-color: #DAA900;;
 box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
-}
+} */
 
 li {
 float: left;
@@ -101,6 +110,30 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 }
+
+/* This fixes the image to the right and text to the left while resizing ###############*/
+
+
+/* This section covers the reason to stream section ###############*/
+
+.list {
+  font-size: 25px;
+  margin-left: 1%;
+  margin-bottom: 10%;
+}
+
+.info {
+  display:  inline;
+  border: 1px dotted #000;
+  border-width: 2px;
+  padding: 1em;
+}
+
+#listTitle {
+  margin-left: 41%;
+}
+
+/* This section covers the reason to stream section ###############*/
 
 
 /* This section covers the table ###############*/
