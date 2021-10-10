@@ -3,36 +3,114 @@
     margin-top: 2%;
     margin-left: 42%;
 }
+#outputFIRST {
+    margin-top: -100px;
+    margin-left: 36%;
+    /* margin-bottom: 8%; */
+    height: 100px;
+    max-width: 450px;
+    color: red;
+    font-size: 50px;
+}
 
-.fakeScreen {
+#OPERATION {
+    margin-top: -120px;
+    margin-left: 55%;
+    font-size: 30px;
+    
+    /* margin-bottom: 0px; */
+}
+
+#RESULT {
+    margin-top: -180px;
+    margin-left: 59%;
+    /* margin-bottom: 8%; */
+    height: 100px;
+    max-width: 450px;
+    color: green;
+    font-size: 50px;
+}
+
+#outputSECOND {
+    margin-top: -100px;
+    margin-left: 36%;
+    /* margin-bottom: 8%; */
+    height: 100px;
+    max-width: 450px;
+    color: black;
+    font-size: 50px;
+}
+#workspace {
     height: 100px;
     width: 450px;
     margin-left: 33%;
     background-color: lightslategrey;
     opacity: 30%;
+    font-size: 0px; /*this makes sure the box isnt affected and can be changed else where */
+    
 }
 
+#workspaceSECOND {  /* NOT SURE WHY THIS WORKS BUT IT DOES LOL */
+    height: 0px;
+    width: 0px;
+    background-color: white;
+    border: white;
+}
+
+
 .button-container {
-    width: 520px;
+    width: 600px;
     background: gray;
     margin-top: 3%;
     margin-left: 30.5%;
-    /* overflow-y: auto; */
+
 }
+
+
+
+
 
 .button-container > button {
     font-size: 20px;
     width: 90px;
     height: 90px;
     float: center;
-    background: blanchedalmond;   
-    margin: 15px;
+    background-color: blanchedalmond;   
+    margin: 13px;
 }
 
 /* This is for the calculator background */
 
-/* This is for the display section */
+/* This is for the button highl */
 
+#equal,#clear {
+    height: 90px;
+    width: 210px
+}
 
+.num:focus {
+    outline: 9px;
+    background-color: yellow;
+}
+
+.oper:focus {
+    outline: 9px;
+    background-color:lightseagreen;
+}
+
+#clear:focus {
+    outline: 9px;
+    background-color: yellow;
+}
+
+#equal:focus {
+    outline: 9px;
+    background-color: yellow;
+}
+
+#blank:focus {
+    outline: 9px;
+    background-color: purple;
+}
 
 /* This is for the display section */
