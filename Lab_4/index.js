@@ -66,7 +66,7 @@ function displayValue(val){
 
     console.log("Op = " + op)
 
-    if(op == '+' || op == '-' || op == '/' || op == '*'){
+    if(op == '+' || op == '-' || op == '/' || op == '*' ){
         operationCount = 1
         text = document.getElementById("workspace").value += val;
         operation = op
@@ -83,7 +83,7 @@ function displayValue(val){
 
     // console.log("#######The value of first is: " + first + " and then the value of second is: " + second)
 
-    if(first == true & second == false & (op == 1 || op == 2 || op == 3 || op == 4 || op == 5 || op == 6 || op == 7 || op == 8 || op == 9 ||op == 0 ) ){
+    if(first == true & second == false & (op == '.' || op == 1 || op == 2 || op == 3 || op == 4 || op == 5 || op == 6 || op == 7 || op == 8 || op == 9 ||op == 0 ) ){
         // console.log('im inside first loop')
         // text = document.getElementById("workspace").value += val;  //this will append val to whatever value was before
         // firstNum = text.split(/[+,-,/,*]/)
@@ -94,7 +94,7 @@ function displayValue(val){
     
     }
 
-    if(first == false & second == true & (op == 1 || op == 2 || op == 3 || op == 4 || op == 5 || op == 6 || op == 7 || op == 8 || op == 9 ||op == 0)){
+    if(first == false & second == true & (op == '.' || op == 1 || op == 2 || op == 3 || op == 4 || op == 5 || op == 6 || op == 7 || op == 8 || op == 9 ||op == 0)){
         // console.log('im inside second loop')
         text = document.getElementById("workspaceSECOND").value += val;  //this will append val to whatever value was before
         secNum = text //saving this value for lab specified reason of = button -> act as a add
@@ -257,8 +257,17 @@ function solve(){
     // console.log("Y has value: " + y)
 
     // console.log("This is inside of operation still: " + operation)
+    amount = checkNums(x)
+    console.log(checkNums(x))
+    // if(operation.contains() == '.'){
 
-    total = eval(x+y)
+    // }
+    try{
+        total = eval(x+y)
+    } catch(err){
+        console.log("Oh Oh, you entered something wrong")   //!MAKE THIS LARGE MAYBE EVEN RESET THE SCREEN?
+    }
+
 
     
 
@@ -277,6 +286,11 @@ function solve(){
     
     // first = true
     // second = false
+}
+
+function checkNums(thingToCheck) { 
+    var arr = thingToCheck.split('.', '.')
+    return dotCount = arr;    
 }
 
 
