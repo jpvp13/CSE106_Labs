@@ -39,7 +39,7 @@
 #workspace {
     height: 100px;
     width: 750px;
-    margin-left: 24.5%;
+    margin-left: 26%;
     background-color: lightslategrey;
     opacity: 30%;
     font-size: 0px; /*this makes sure the box isnt affected and can be changed else where */
@@ -68,9 +68,18 @@
     width: 90px;
     height: 90px;
     float: center;
-    background-color: blanchedalmond;   
+    /* background-color: white;    */
     margin: 13px;
 }
+
+.num {
+    background-color: lightblue;
+}
+
+.oper {
+    background-color: lightcoral;
+}
+
 
 /* This is for the calculator background */
 
@@ -78,7 +87,8 @@
 
 #equal,#clear {
     height: 90px;
-    width: 210px
+    width: 210px;
+    background-color: lightsalmon;
 }
 
 .num:focus {
