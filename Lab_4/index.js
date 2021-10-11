@@ -16,6 +16,8 @@ let op
 let stopEquals = false //this allows for the equalsDisplay to be used
 let insideEquals = false
 let STARTNEW = false
+let operatorPressed = false
+let equalsPressed = false
 
 function checkElement(val){
     switch (val){
@@ -57,7 +59,7 @@ function displayValue(val){
     // console.log(val)
     // repeat = false;
 
-    STARTNEW = false
+    // STARTNEW = false
     let operationCount
     
     
@@ -66,15 +68,29 @@ function displayValue(val){
 
     console.log("Op = " + op)
 
+
     if(op == '+' || op == '-' || op == '/' || op == '*' ){
         operationCount = 1
         text = document.getElementById("workspace").value += val;
         operation = op
+        
         // console.log("This is what is inside of operation: " + operation)
+        // console.log("The value of operation at this moment is : " + operation)
+
+        
+
         document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
         first = false
         second = true
         // operation = true //this will let the operation print
+
+        if(count > 0 & operatorPressed == true){    //!check here
+            console.log("I am inside of the loops that supposed to check if another operator was entered")
+            equalsDisplayValue(total, secNum, operation)
+            count = count + 1
+            // solve()
+        }
+
     }
 
     if(operationCount >1){
@@ -103,11 +119,9 @@ function displayValue(val){
 
         // console.log("Trying to split these equations into second numbers " + text)
         document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
+        
+        
     }
-
-
-    
- 
 }
 
 
@@ -125,12 +139,13 @@ function equalsDisplayValue(total, secNum){
         let z
         // clearPrevious()
         clearEquals()
+        operatorPressed = true  //! considering this
 
 
         text = document.getElementById("workspace").value += total;
 
         if(Math.sign(text) == 1 & operation == '*'){
-            console.log("I AM INSIDE MULTIPLE")
+            // console.log("I AM INSIDE MULTIPLE")
             text = document.getElementById("workspace").value += '*';
             // console.log("Number inside of text within equalsDisplayValue " + text)
             document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
@@ -145,9 +160,9 @@ function equalsDisplayValue(total, secNum){
 
             document.getElementById("RESULT").innerHTML = total
 
-            console.log("The total arithmetic of z is: " + total)
+            // console.log("The total arithmetic of z is: " + total)
         }else if((Math.sign(text) == 1) & operation == '/'){
-            console.log("I AM INSIDE DIVIDE")
+            // console.log("I AM INSIDE DIVIDE")
             text = document.getElementById("workspace").value += '/';
             // console.log("Number inside of text within equalsDisplayValue " + text)
             document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
@@ -162,27 +177,27 @@ function equalsDisplayValue(total, secNum){
 
             document.getElementById("RESULT").innerHTML = total
 
-            console.log("The total arithmetic of z is: " + total)
+            // console.log("The total arithmetic of z is: " + total)
         }else if(Math.sign(text) == 1 & operation == '+'){
 
-            console.log("I AM INSIDE ADD")
+            // console.log("I AM INSIDE ADD")
             text = document.getElementById("workspace").value += '+';
             // console.log("Number inside of text within equalsDisplayValue " + text)
             document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
             text = document.getElementById("workspaceSECOND").value += secNum;
             document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
             x = document.getElementById('workspace').value
-            console.log("X has value: " + x)
+            // console.log("X has value: " + x)
             y = document.getElementById('workspaceSECOND').value
-            console.log("Y has value: " + y)
+            // console.log("Y has value: " + y)
 
             total = eval(x + y)
 
             document.getElementById("RESULT").innerHTML = total
 
-            console.log("The total arithmetic of z is: " + total)
+            // console.log("The total arithmetic of z is: " + total)
         }else if((Math.sign(text) == -1) || (total == 0) & operation == '-'){
-            console.log("I AM INSIDE SUBTRACT")
+            // console.log("I AM INSIDE SUBTRACT")
             text = document.getElementById("workspace").value += '-';
             // console.log("Number inside of text within equalsDisplayValue " + text)
             document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
@@ -197,7 +212,7 @@ function equalsDisplayValue(total, secNum){
 
             document.getElementById("RESULT").innerHTML = total
 
-            console.log("The total arithmetic of z is: " + total)
+            // console.log("The total arithmetic of z is: " + total)
         }
         // }else if(Math.sign(text) == -1){
         //     text = document.getElementById("workspace").value += '-';
@@ -247,6 +262,12 @@ function solve(){
     if(count > 1 & STARTNEW == false){
         equalsDisplayValue(total, secNum, operation)
     }
+
+    if(count > 1 & (operation == '+' || operation == '-' || opeation == '/' || operation == '*')){  //! ended here for appending after output
+        console.log("Inside of the loop once a second operation is pressed")
+
+        equalsDisplayValue(total, secNum,operation)
+    }   
     
     let x;
     let y;
@@ -258,7 +279,7 @@ function solve(){
 
     // console.log("This is inside of operation still: " + operation)
     amount = checkNums(x)
-    console.log(checkNums(x))
+    // console.log(checkNums(x))
     // if(operation.contains() == '.'){
 
     // }
@@ -300,6 +321,9 @@ function clearEquals(){
     document.getElementById("outputFIRST").innerHTML = ""    //this clears what the user sees on screen
     document.getElementById("outputSECOND").innerHTML = ""    //this clears what the user sees on screen
     document.getElementById("RESULT").innerHTML = ""    //this clears what the user sees on screen
+    x = 0
+    y = 0
+
 }
 
   
