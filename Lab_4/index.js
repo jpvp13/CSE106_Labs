@@ -18,6 +18,8 @@ let insideEquals = false
 let STARTNEW = false
 let operatorPressed = false
 let equalsPressed = false
+let periodCount = 0
+let periodCount2 = 0
 
 function checkElement(val){
     switch (val){
@@ -84,10 +86,6 @@ function displayValue(val){
 
     console.log("Op = " + op)
 
-    if(operationCount > 1){
-        document.getElementById('RESULT').innerHTML = "ONLY ONE OPERATOR"
-    }
-
     if(op == '+' || op == '-' || op == '/' || op == '*' ){
         
         text = document.getElementById("workspace").value += val;
@@ -120,26 +118,73 @@ function displayValue(val){
 
     }
 
-    
 
     // console.log("#######The value of first is: " + first + " and then the value of second is: " + second)
 
     if(first == true & second == false & (op == '.' || op == 1 || op == 2 || op == 3 || op == 4 || op == 5 || op == 6 || op == 7 || op == 8 || op == 9 ||op == 0 ) ){
-        text = document.getElementById("workspace").value += val;
-        // console.log("Trying to split these equations into first numbers " + text)
-        document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
-    
+        
+        
+        console.log("Period count = " + periodCount)
+
+        if(periodCount < 1){
+            console.log("inside of periodCount < 1")
+            text = document.getElementById("workspace").value += val;
+            // console.log("Trying to split these equations into first numbers " + text)
+            document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
+            // periodCount = periodCount + 1
+        } else if(periodCount > 1){
+            console.log("There are more than 1 period")
+            document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
+            
+        }
+
+        if(periodCount >= 1  & (op == 1 || op == 2 || op == 3 || op == 4 || op == 5 || op == 6 || op == 7 || op == 8 || op == 9 ||op == 0 )){
+            text = document.getElementById("workspace").value += val;
+            // console.log("Trying to split these equations into first numbers " + text)
+            document.getElementById("outputFIRST").innerHTML = text   //this will edit the output on screen using the newly appended value
+        }
+        if(op == '.'){
+            console.log("There was a period entered")
+            periodCount = periodCount + 1
+        }
+        
+        periodCount2 = 0
     }
 
     if(first == false & second == true & (op == '.' || op == 1 || op == 2 || op == 3 || op == 4 || op == 5 || op == 6 || op == 7 || op == 8 || op == 9 ||op == 0)){
         // console.log('im inside second loop')
-        text = document.getElementById("workspaceSECOND").value += val;  //this will append val to whatever value was before
-        secNum = text //saving this value for lab specified reason of = button -> act as a add
-        // console.log("before splitting the text variable = " + text)
-        // secNum = text.split('')
+        // periodCount2 = 0
 
-        // console.log("Trying to split these equations into second numbers " + text)
-        document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
+        console.log("Period count = " + periodCount2)
+
+
+        if(periodCount2 < 1){
+            console.log("inside of periodCount < 1")
+            text = document.getElementById("workspaceSECOND").value += val;
+            // console.log("Trying to split these equations into first numbers " + text)
+            document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
+            // periodCount = periodCount + 1
+        } else if(periodCount2 > 1){
+            console.log("There are more than 1 period")
+            document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
+            
+        }
+
+        if(periodCount2 >= 1  & (op == 1 || op == 2 || op == 3 || op == 4 || op == 5 || op == 6 || op == 7 || op == 8 || op == 9 ||op == 0 )){
+            text = document.getElementById("workspaceSECOND").value += val;
+            // console.log("Trying to split these equations into first numbers " + text)
+            document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
+        }
+        if(op == '.'){
+            console.log("There was a period entered")
+            periodCount2 = periodCount2 + 1
+        }
+
+        // text = document.getElementById("workspaceSECOND").value += val;  //this will append val to whatever value was before
+        // secNum = text //saving this value for lab specified reason of = button -> act as a add
+
+        // // console.log("Trying to split these equations into second numbers " + text)
+        // document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
         
         
     }
@@ -268,6 +313,7 @@ function solve(){
         total = eval(x+y)
     } catch(err){
         console.log("Oh Oh, you entered something wrong")   //!MAKE THIS LARGE MAYBE EVEN RESET THE SCREEN?
+        document.getElementById("RESULT").innerHTML = text + "You have entered something wrong"
     }
 
 
@@ -316,5 +362,6 @@ function clearPrevious(){
     secNum = 0
     total = 0
     text = 0
+    periodCount = 0
     // operation = ''
 }
