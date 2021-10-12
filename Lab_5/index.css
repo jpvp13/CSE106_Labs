@@ -1,0 +1,107 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+#Title-Wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    /* background-color: #2196F3; */
+    padding: 10px
+}
+
+#Page-Title {
+    font-size: 30px;
+    text-align: center;
+}
+
+
+/* This handles the nav button bar */
+
+
+.Action-Options button {
+    width: 100%;
+    background-color: #04AA6D; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+#add-item, #get-Specific-item, #get-All-item, #update-Specific-item, #delete-Specific-item {
+    width: 20%;
+}
+.Action-Options:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.Action-Options button:not(:last-child){
+    border-right: none; /* Prevent double borders */
+}
+
+.Action-Options button:hover {
+    background-color: blanchedalmond;
+}
+
+/* Add a background color on hover */
+.Action-Options button:hover {
+    background-color: #3e8e41;
+}
+
+.Action-Options button:active {
+    border: solid 1px;
+}
+
+/* This handles the nav button bar */
+
+/* This is what handles the styling to show the user what option is selected */
+
+#optionDisplay {
+    font-size: 40px;
+    width: 400px;
+    transform: translate(870px);
+    font-style: italic;
+    text-decoration: underline;
+}
+
+/* This is what handles the styling to show the user what option is selected */
+
+
+
+/* This will handle the input area */
+
+.searchBar {
+    font-size: 40px;
+    width: 500px;
+    height: 250px;
+    background-color: green;
+    text-align: center;
+    /* margin-top:20% ; */
+    transform: translate(-100px, 100px);
+}
+
+/* This will handle the input area */
+
+.inputANDoutput{
+    display: grid;
+    /* margin-left: 10%; */
+    grid-template-columns: auto auto auto auto auto;
+    /* background-color: lightgray; */
+    padding: 10px;
+    column-gap: 10px;
+    /* width:50%; */
+}
+
+/* This will handle the output area */
+.output {
+    background-color: blueviolet;
+    text-align: center;
+    font-size: 30px;
+    width: 750px;
+    height: 600px;
+    transform: translate(100px, 100px);
+}
+/* This will handle the output area */
+
+
