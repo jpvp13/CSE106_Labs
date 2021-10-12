@@ -7,41 +7,59 @@
     <meta name="viewport" content="width=device-width">
     <title> My First Calculator</title>
 
+    <script src = "index.js"></script>
+
     <link href="index.css" rel="stylesheet" />
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 </head>
 
 <body>
+
     <h1 id = "calc_Title"> My Calculator</h1>
 
-    <div class = "fakeScreen"></div>
+    <!-- <p id = "output" type = "text"></p> -->
+    <!-- <td colspan="3"><input type="text" id="output" /></td>
+    <div id = "x-operand" type = "text"></div>  -->
+    <!-- <div class = "y-operand" type = "text"></div> -->
+
 
     <div class = "calc_Background">
+        <td colspan="3"><input type="text" id="workspace" /></td>
+        <td colspan="3"><input type="text" id="workspaceSECOND" /></td>
+        <p id = "outputFIRST" type = "text"></p>
+        <p id = "outputSECOND" type = "text"></p>
+        <p id = "RESULT" type = "text"></p>  
+        
         <div class = "button-container">
-            <button class = "row1" type = "button">1</button>
-            <button class = "row1" type = "button">2</button>
-            <button class = "row1" type = "button">3</button>
-            <button class = "row2" type = "button"> + </button>
-
-            <button class = "row2" type = "button">4</button>
-            <button class = "row2" type = "button">5</button>
-            <button class = "row2" type = "button">6</button>
-            <button class = "row2" type = "button"> - </button>
-
-            <button class = "row3" type = "button">7</button>
-            <button class = "row3" type = "button">8</button>
-            <button class = "row3" type = "button">9</button>
-            <button class = "row3" type = "button"> x </button>
-
-
-            <button class = "row4" type = "button">0</button>
-            <button class = "row4" type = "button">=</button>
-            <button class = "row4" type = "button">Clear</button>
-            <button class = "row4" type = "button"> / </button>
+            <button class = "num" value = "1" onclick="displayValue('1')" >1</button>
+            <button class = "num" value = "2" onclick="displayValue('2')" >2</button>
+            <button class = "num" value = "3" onclick="displayValue('3')" >3</button>
+            <button class = "oper" value = "+" onclick="displayValue('+')" > + </button>
+            <button class = "oper" value = "-" onclick="displayValue('-')"> - </button>
+            
+            <button class = "num" value = "4" onclick="displayValue('4')">4</button>
+            <button class = "num" value = "5" onclick="displayValue('5')">5</button>
+            <button class = "num" value = "6" onclick="displayValue('6')">6</button>
+            
+            <button class = "oper" value = "*" onclick="displayValue('*')"> * </button>
+            <button class = "oper" value = "/" onclick="displayValue('/')"> / </button>
+            <button class = "num" value = "7" onclick="displayValue('7')">7</button>
+            <button class = "num" value = "8" onclick="displayValue('8')">8</button>
+            <button class = "num" value = "9" onclick="displayValue('9')">9</button>
+            
+            <button class = "num" value = "." onclick="displayValue('.')"> . </button>
+            <!-- <button id = "blank">  :) </button> -->
+            <button class = "num" value = "0" onclick="displayValue('0')">0</button>
+            
+            
+            
+            <button id = "clear" value = "c" onclick= "clearPrevious()"> clear </button>
+            <button id = "equal"  onclick = "solve()">=</button>
+            
+            
             
         </div>
-
-        <div 
+        
     </div>
 
 </body>
@@ -51,5 +69,5 @@
 
 <!-- References 
 ~ https://www.w3schools.com/howto/howto_css_shapes.asp 
-
--->
+~ https://www.w3schools.com/js/js_examples.asp
+ -->
