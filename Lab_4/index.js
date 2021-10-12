@@ -1,5 +1,4 @@
 
-// !#################################################################################################################################
 let repeat;
 let expectOperation = false;
 let text;
@@ -164,6 +163,7 @@ function displayValue(val){
             // console.log("Trying to split these equations into first numbers " + text)
             document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
             // periodCount = periodCount + 1
+            secNum = text
         } else if(periodCount2 > 1){
             console.log("There are more than 1 period")
             document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
@@ -174,20 +174,16 @@ function displayValue(val){
             text = document.getElementById("workspaceSECOND").value += val;
             // console.log("Trying to split these equations into first numbers " + text)
             document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
+            secNum = text
         }
         if(op == '.'){
             console.log("There was a period entered")
             periodCount2 = periodCount2 + 1
         }
-
-        // text = document.getElementById("workspaceSECOND").value += val;  //this will append val to whatever value was before
-        // secNum = text //saving this value for lab specified reason of = button -> act as a add
-
-        // // console.log("Trying to split these equations into second numbers " + text)
-        // document.getElementById("outputSECOND").innerHTML = text   //this will edit the output on screen using the newly appended value
-        
         
     }
+
+    console.log("THe value of secNum inside of display is =" + secNum)
 }
 
 
@@ -206,6 +202,8 @@ function equalsDisplayValue(total, secNum, operation){
         // clearPrevious()
         clearEquals()
         operatorPressed = true  //! considering this
+
+        console.log("Inside of equalsDisplays the value of secNum is = " + secNum)
 
 
         text = document.getElementById("workspace").value += total;
@@ -298,7 +296,7 @@ function solve(){
         console.log("The value of secNum is: " + secNum)
         console.log("The value of operation is: " + operation)
         equalsDisplayValue(total, secNum, operation)
-        operatorPressed = true
+        // operatorPressed = true
     }
     let x;
     let y;
@@ -329,7 +327,7 @@ function solve(){
     
 
     
-    console.log("The total of click count is " + count)
+    console.log("The total of click count inside of solve is " + count)
 }
 
 function clearEquals(){
@@ -359,7 +357,7 @@ function clearPrevious(){
     document.getElementById("RESULT").innerHTML = ""    //this clears what the user sees on screen
     x = 0
     y = 0
-    secNum = 0
+    // secNum = 0
     total = 0
     text = 0
     periodCount = 0
