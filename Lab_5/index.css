@@ -94,7 +94,7 @@ body {
 }
 
 /* This will handle the output area */
-.output {
+#output {
     background-color: blueviolet;
     text-align: center;
     font-size: 30px;

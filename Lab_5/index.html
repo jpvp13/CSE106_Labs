@@ -7,22 +7,26 @@
         <meta name="viewport" content="width=device-width">
         <title>Student Info Home</title>
 
-        <script src = "index.js"></script>
+        
 
         <link href="index.css" rel="stylesheet" />
+        <script src = "index.js"></script>
     </header>
     <body>
         <div id = "Title-Wrapper">
             <p id = "Page-Title">Student Information Home Page</p>
         </div>
         <!-- This is where the buttons live -->
+        <div class = "TEST">
         <div class = "Action-Options">
             <!-- <button id = "add-item" onclick = "addStudentAJAX()">Add Student</button> -->
-            <button type = "submit" id = "add-item" onclick = "addStudentAJAX()">Add Student</button>
-            <button id = "get-Specific-item" >Get Specific Student</button>
-            <button id = "get-All-item">Get All Student</button>
-            <button id = "update-Specific-item">Update Student Info</button>
-            <button id = "delete-Specific-item">Delete Student</button>
+            <button type = "submit" id = "add-item" value = "POST">Add Student</button>
+            <button type = "submit" id = "get-Specific-item" value = "POST" >Get Specific Student</button>
+            <button type = "submit" id = "get-All-item" value = "GET" onclick = "getAllStudents()">Get All Student</button>
+
+            <!-- <button type = "submit" id = "get-All-item" value = "GET" onclick="getAllStudents()">Get All Student</button> -->
+            <button type = "submit" id = "update-Specific-item" value = "PUT">Update Student Info</button>
+            <button type = "submit" id = "delete-Specific-item" value = "DELETE">Delete Student</button>
             
             
 
@@ -40,16 +44,16 @@
                     <label for="gpa">GPA:</label>
                     <input type="text" placeholder = "Enter GPA (if applicable)" id="gpa" name = "gpa"><br>
                     <!-- <input type = "submit" id = "submit" onclick="getValues();"> -->
-                    <button type = "submit" cid = "submit" onclick = "getValues()">Submit</button>
+                    <button type = "submit" id = "submit" onclick = "getValues()">Submit</button>
                     
                 </form>
             </div>
 
-            <div class = "output"></div>
+            <div type = "text" id = "output">dsad</div>
         </div>
 
 
-
+        </div> 
 
 
                 <!-- This is example is with a number...
