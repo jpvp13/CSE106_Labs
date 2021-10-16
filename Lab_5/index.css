@@ -71,14 +71,14 @@ body {
 
 /* This will handle the input area */
 
-.searchBar {
+#searchBar {
     font-size: 40px;
     width: 500px;
     height: 250px;
     background-color: green;
     text-align: center;
     /* margin-top:20% ; */
-    transform: translate(-100px, 100px);
+    transform: translate(-40vh, 100px);
 }
 
 /* This will handle the input area */
@@ -100,7 +100,7 @@ body {
     font-size: 30px;
     width: 750px;
     height: 600px;
-    transform: translate(100px, 100px);
+    transform: translate(-40vh, 100px);
 }
 /* This will handle the output area */
 
