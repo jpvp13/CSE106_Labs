@@ -20,13 +20,13 @@
     <!-- This is where the buttons live -->
     <div class="Action-Options">
         <!-- <button id = "add-item" onclick = "addStudentAJAX()">Add Student</button> -->
-        <button type="submit" id="add-item" value="POST" onclick="showSearchBar()">Add Student</button>
-        <button type="submit" id="get-Specific-item" value="GET">Get Specific Student</button>
-        <button type="submit" id="get-All-item" value="GET" onclick="getAllStudents()">Get All Student</button>
+        <button type="submit" id="add-item" value="POST" onclick="showSearchBarAddStudent()">Add Student</button>
+        <button type="submit" id="get-Specific-item" value="GET" onclick="showSearchBar_SpecificStudent()">Get Specific Student</button>
+        <button type="submit" id="get-All-item" value="GET" onclick="getAllStudentsAJAX()">Get All Student</button>
 
         <!-- <button type = "submit" id = "get-All-item" value = "GET" onclick="getAllStudents()">Get All Student</button> -->
-        <button type="submit" id="update-Specific-item" value="PUT">Update Student Info</button>
-        <button type="submit" id="delete-Specific-item" value="DELETE">Delete Student</button>
+        <button type="submit" id="update-Specific-item" value="PUT" onclick = "showSearchBar_UpdateStudent()">Update Student Info</button>
+        <button type="submit" id="delete-Specific-item" value="DELETE" onclick="showSearchBar_DeleteStudent()">Delete Student</button>
 
     </div>
 
@@ -83,25 +83,63 @@
     <!-- This is where the input will be taken -->
     <div class="inputANDoutput">
 
-        <div id="optionDisplay">HI</div>
+        <div id="optionDisplay">Welcome to this record system!</div>
+        <p id = "description">This is the home screen! To begin accessing students data, press one of the buttons above to choose a action.</p>
 
         <div id="show&hide">
-            <div id="searchBar" style= "display: none;">
+            <div id="searchBarAddStudent" style= "display: none;">
                 <form>
-                    <label for="Name" id="namePlaceholder" display: none>Name:</label>
-                    <input type="text" placeholder="Enter Full Name" id="fullName" name="name"><br>
+                    <label for="Name" class="namePlaceholder" display: none>Name:</label>
+                    <input type="text" placeholder="Enter Full Name (Case Sensative)" id="fullNameADD" name="name"><br>
                     <label for="gpa" style=>GPA:</label>
-                    <input type="text" placeholder="Enter GPA (if applicable)" id="Gpa" name="gpa"><br>
-                    <button type="button" id="submit" onclick = "addStudentAJAX()">Submit</button>
-                    <!-- <input type = "submit" id = "submit" onclick="getValues();"> -->
-                    <!-- <button type="submit" id="submit" onclick="getValues()">Submit</button> -->
+                    <input type="text" placeholder="Enter GPA (if applicable)" id="GpaADD" name="gpa"><br>
+                    <button type="button" class="submit" onclick = "addStudentAJAX()">Submit</button>
+     
 
-                    <p id="displayInput"></p>
+                    <p id="displayInputADD"></p>
+
+                </form>
+            </div>
+<!-- ############################################################################################################################# -->
+            <div id="searchBarGetSpecificStudent" style= "display: none;">
+                <form>
+                    <label for="Name" class="namePlaceholder" display: none>Name:</label>
+                    <input type="text" placeholder="Enter Full Name (Case Sensative)" id="fullNameGetSpecific" name="name"><br>
+                    <button type="button" class="submit" onclick = "getSpecificStudentAJAX()">Submit</button>
+         
+
+                    <p id="displayInputSpecific"></p>
+
+                </form>
+            </div>
+<!-- ############################################################################################################################# -->
+            <div id="searchBarUpdateStudent" style= "display: none;">
+                <form>
+                    <label for="Name" class="namePlaceholder" display: none>Name:</label>
+                    <input type="text" placeholder="Enter Full Name (Case Sensative)" id="fullNameUpdate" name="name"><br>
+                    <label for="gpa" style=>GPA:</label>
+                    <input type="text" placeholder="Enter New GPA (if applicable)" id="GpaUpdate" name="gpa"><br>
+                    <button type="button" class="submit" onclick = "updateStudentAJAX()">Submit</button>
+            
+                    <p id="displayInputUpdate"></p>
+
+                </form>
+            </div>
+<!-- ############################################################################################################################# -->
+            <div id="searchBarDeleteStudent" style= "display: none;">
+                <form>
+                    <label for="Name" class="namePlaceholder" display: none>Name:</label>
+                    <input type="text" placeholder="Enter Full Name (Case Sensative)" id="fullNameDelete" name="name"><br>
+                    <button type="button" class="submit" onclick = "deleteStudentAJAX()">Submit</button>
+
+                    <p id="displayInputDelete"></p>
 
                 </form>
             </div>
             <pre>                                          <!--Legend makes it like a description, em makes it italic, u underlines-->
                     <div type="text" id="output" style="display: none"><legend><em><u>Students Name : GPA</u></em></legend> </div>
+                    <div type="text" id="outputGetAll" style="display: none"><pre><legend><em><u>Students Name : GPA</u></em></legend> </pre></div>
+
                 </pre>
 
         </div>

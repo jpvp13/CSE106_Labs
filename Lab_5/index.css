@@ -33,7 +33,7 @@ body {
 .Action-Options:after {
     content: "";
     clear: both;
-    display: table;
+    /* ay: table; */
 }
 
 .Action-Options button:not(:last-child){
@@ -59,9 +59,13 @@ body {
 
 #optionDisplay {
     font-size: 40px;
-    width: 400px;
-    transform: translate(870px);
+    /* width: 400px; */
+    width:63vh;
+    height: 8vh;
+    /* background-color: blue; */
+    transform: translate(70vh);
     font-style: italic;
+    text-align: center;
     text-decoration: underline;
 }
 
@@ -71,14 +75,44 @@ body {
 
 /* This will handle the input area */
 
-#searchBar {
+#searchBarAddStudent {
     font-size: 40px;
-    width: 500px;
-    height: 250px;
+    width:60vh;
+    height: 40vh;
     background-color: green;
     text-align: center;
-    /* margin-top:20% ; */
-    transform: translate(-40vh, 100px);
+    /* margin-top:5vh ; */
+    transform: translate(-60vh, 100px);
+}
+
+#searchBarGetSpecificStudent {
+    font-size: 40px;
+    width:60vh;
+    height: 40vh;
+    background-color: lightcoral;
+    text-align: center;
+    /* margin-top:-3vh ; */
+    transform: translate(-60vh, 100px);
+}
+
+#searchBarUpdateStudent {
+    font-size: 40px;
+    width:60vh;
+    height: 40vh;
+    background-color: white;
+    text-align: center;
+    /* margin-top:-3vh ; */
+    transform: translate(-60vh, 15vh);
+}
+
+#searchBarDeleteStudent {
+    font-size: 40px;
+    width:60vh;
+    height: 40vh;
+    background-color: lightblue;
+    text-align: center;
+    margin-top:-3vh ;
+    transform: translate(-60vh, 15vh);
 }
 
 /* This will handle the input area */
@@ -98,18 +132,35 @@ body {
     background-color: blueviolet;
     text-align: center;
     font-size: 30px;
-    width: 750px;
-    height: 600px;
-    transform: translate(50vh, 100px);
+    width:90vh;
+    height: 60vh;
+    overflow-y: scroll;
+    transform: translate(20vh, -30vh);
+}
+
+#outputGetAll {
+    grid-template-columns: auto auto;
+    background-color: red;
+    text-align: center;
+    font-size: 30px;
+    width:150vh;
+    height: 60vh;
+    overflow-y: scroll;
+    transform: translate(-35vh, 5vh);
 }
 /* This will handle the output area */
 
-.instructions {
-    font-size: 20px;
-    background-color: lightgrey;
-    opacity: 0.9;
-    text-align:justify;
-    font-style: oblique;
-    width: fit-content;
-    transform: translate(50vh);
+
+#fullNameADD, #fullNameGetSpecific, #fullNameUpdate, #fullNameDelete {
+    width: 30vh;
+}
+
+#GpaADD, #GpaGetSpecific, #GpaUpdate, #GpaDelete{
+    width: 32vh;
+}
+
+#description {
+    font-size: 30px;
+    transform: translate(-7vh, 7vh);
+    text-align: left;
 }
