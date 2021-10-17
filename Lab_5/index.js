@@ -1,5 +1,5 @@
 const async = true;
-let fullName = "jhn";
+let fullName;
 let gpa;
 
 let option = document.querySelectorAll("Action-Options");
@@ -12,6 +12,8 @@ function getAllStudents() {
     clearGetAllStudents();
     const xhttp = new XMLHttpRequest();
     document.getElementById('output').style.display = 'block';
+    document.getElementById('searchBar').style.display = 'none';
+
     
     xhttp.onload = function() {
         // const myObj =JSON.parse(this.responseText);
@@ -35,32 +37,73 @@ function clearGetAllStudents(){
     document.getElementById("output").innerHTML = "<legend><em><u>Students Name : GPA</u></em></legend> ";
 }
 
-function addStudentAJAX(){
-    console.log("I am inside of add student")
+function addStudentAJAX(){   //!this is the orignal and works correctly
+    const xhttp = new XMLHttpRequest();
 
-    let fullName = document.getElementById("fullName").value;
-    let bga = document.getElementById("Gpa").value;
-    // clearContents();
+    fullName = document.getElementById("fullName").value;
+    gpa = document.getElementById("Gpa").value;
 
-    console.log(fullname);
-    console.log(gpa)
 
-    document.getElementById("searchBar").style.display = 'block';
-    document.getElementById("output").style.display = 'block';
+    if(/\d/.test(fullName) == true & /^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z])*/mg.test(gpa) == true ){
+
+        document.getElementById("displayInput").innerHTML = "Both fields have incorrect values within them. Please check both of your inputs."
+
+        // console.log("Inside test 1")
+
+    }else if(/\d/.test(fullName) == true){    //! checks to make sure the name input bar only has letters
+
+        document.getElementById("displayInput").innerHTML = "A incorrect character was input in the name field. Please only use characters ranging from A-Z in the name field."
+
+        // console.log("Inside test 2")
+        // console.log("The input is a number")
+
+    }else if(/^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z])*/mg.test(gpa) == true){
+
+        console.log("GPA has a character inside of itself")
+        document.getElementById("displayInput").innerHTML = "A incorrect character was input into the GPA field. Please only use values ranging from 0-9 (including decimals) in the GPA field."
+       
+        // console.log("Inside test 3")
+        // console.log("The type of GPA is " + gpa)
+    }else{
+        console.log("passed all tests")
+
+
+        document.getElementById("displayInput").innerHTML = "";
+        document.getElementById("displayInput").innerHTML = "The name that was entered is: " + fullName;
+    
+    
+        xhttp.open("POST","https://amhep.pythonanywhere.com/grades", true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        const body = {"name": fullName, "grade": gpa};
+        // xhttp.send(JSON.stringify(body));
+        if(xhttp.send(JSON.stringify(body)) == 409){
+            console.log("AHHH")
+        }
+    }
+    
+
+
+    // xhttp.onload = function(){
+    //     let sendingData = JSON.parse(this.responseText);
+    //     for (let key in sendingData){
+    //         console.log("SendingData is equal to: " + sendingData);
+    //         document.getElementById("displayInput").innerHTML += "(" + key + ": " + sendingData + ")";
+    //     }
+    // };
 }
 
-// function getValues(){   //! this reads my input fields
-//     console.log("I am inside of getValues")
-//     fullName = document.getElementById("fullName").value;
-//     // lastName = document.getElementById("lname").value;
-//     gpa = document.getElementById("gpa").value;
+function showSearchBar(){  //this will display the appropriate fields when clicked on "add student"
+    document.getElementById("searchBar").style.display = "block";
+    document.getElementById("output").style.display = "block";
 
-//     console.log("The name inside of fullName is =" + fullName);
-//     console.log("The number inside of gpa is =" + gpa);
-//     // document.getElementsByClassName("output").innerHTML = fullName;
+}
+
+function getSpecificStudent(){
+
+}
 
 
-// }  
+
 
 function clearContents() {  //~ clears out the output area ready for new input
     document.getElementById("searchBar").style.display = "none";
@@ -68,3 +111,6 @@ function clearContents() {  //~ clears out the output area ready for new input
     document.getElementById("output").innerHTML = "";
 }
 
+
+
+//~https://stackoverflow.com/questions/23476532/check-if-string-contains-only-letters-in-javascript
