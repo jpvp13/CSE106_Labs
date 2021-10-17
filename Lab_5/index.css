@@ -100,8 +100,16 @@ body {
     font-size: 30px;
     width: 750px;
     height: 600px;
-    transform: translate(-40vh, 100px);
+    transform: translate(50vh, 100px);
 }
 /* This will handle the output area */
 
-
+.instructions {
+    font-size: 20px;
+    background-color: lightgrey;
+    opacity: 0.9;
+    text-align:justify;
+    font-style: oblique;
+    width: fit-content;
+    transform: translate(50vh);
+}

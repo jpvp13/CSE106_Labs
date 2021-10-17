@@ -18,48 +18,95 @@
         <p id="Page-Title">Student Information Home Page</p>
     </div>
     <!-- This is where the buttons live -->
-    <div class="TEST">
-        <div class="Action-Options">
-            <!-- <button id = "add-item" onclick = "addStudentAJAX()">Add Student</button> -->
-            <button type="submit" id="add-item" value="POST" onclick="addStudentAJAX('searchBar','output')">Add Student</button>
-            <button type="submit" id="get-Specific-item" value="POST">Get Specific Student</button>
-            <button type="submit" id="get-All-item" value="GET" onclick="getAllStudents()">Get All Student</button>
+    <div class="Action-Options">
+        <!-- <button id = "add-item" onclick = "addStudentAJAX()">Add Student</button> -->
+        <button type="submit" id="add-item" value="POST" onclick="showSearchBar()">Add Student</button>
+        <button type="submit" id="get-Specific-item" value="GET">Get Specific Student</button>
+        <button type="submit" id="get-All-item" value="GET" onclick="getAllStudents()">Get All Student</button>
 
-            <!-- <button type = "submit" id = "get-All-item" value = "GET" onclick="getAllStudents()">Get All Student</button> -->
-            <button type="submit" id="update-Specific-item" value="PUT">Update Student Info</button>
-            <button type="submit" id="delete-Specific-item" value="DELETE">Delete Student</button>
-
-
-
-        </div>
-
-        <!-- This is where the input will be taken -->
-        <div class="inputANDoutput">
-
-            <div id="optionDisplay">HI</div>
-
-            <div id = "show&hide" >
-                <div id = "searchBar" style="display: none">
-                    <form>
-                        <label for="Name">Name:</label>
-                        <input type="text" placeholder="Enter Full Name" id="fullName" name="name"><br>
-                        <label for="gpa">GPA:</label>
-                        <input type="text" placeholder="Enter GPA (if applicable)" id="Gpa" name="gpa"><br>
-                        <button type="submit" id="submit" >Submit</button>
-                        <!-- <input type = "submit" id = "submit" onclick="getValues();"> -->
-                        <!-- <button type="submit" id="submit" onclick="getValues()">Submit</button> -->
-
-                    </form>
-                </div>
-                <pre>                                          <!--Legend makes it like a description, em makes it italic, u underlines-->
-                    <div type="text" id="output" style="display: none"><legend><em><u>Students Name : GPA</u></em></legend> </div>
-                </pre>
-                
-            </div>
-        </div>
-
+        <!-- <button type = "submit" id = "get-All-item" value = "GET" onclick="getAllStudents()">Get All Student</button> -->
+        <button type="submit" id="update-Specific-item" value="PUT">Update Student Info</button>
+        <button type="submit" id="delete-Specific-item" value="DELETE">Delete Student</button>
 
     </div>
+
+    <!-- <div class="instructions">
+        <p>
+            Welcome!<br>
+            Here you will be able to find information regarding fake students.<br>
+            Here are some instructions on how to use this site:<br>
+        <ol>
+            <li>
+                Add Student
+                <ol>
+                    <li>
+                        Please make sure to type in the students name and GPA <em>FIRST</em>, then click on the "Add Student" button
+                    </li>
+                </ol>
+            <li>
+                Get Specific Student
+                <ol>
+                    <li>
+                        XXXX
+                    </li>
+                </ol>
+            <li>
+                Get All Students
+                <ol>
+                    <li>
+                        Press the "Get All Students" button at anytime to retrieve all student information
+                    </li>
+                </ol>
+            <li>
+                Update Student Information
+                <ol>
+                    <li>
+                        XXXXX
+                    </li>
+                </ol>
+            <li>
+                Delete Student
+                <ol>
+                    <li>
+                        XXXXXX
+                    </li>
+                </ol>
+            </li>
+            </li>
+            </li>
+            </li>
+            </li>
+        </ol>
+        </p>
+    </div> -->
+
+    <!-- This is where the input will be taken -->
+    <div class="inputANDoutput">
+
+        <div id="optionDisplay">HI</div>
+
+        <div id="show&hide">
+            <div id="searchBar" style= "display: none;">
+                <form>
+                    <label for="Name" id="namePlaceholder" display: none>Name:</label>
+                    <input type="text" placeholder="Enter Full Name" id="fullName" name="name"><br>
+                    <label for="gpa" style=>GPA:</label>
+                    <input type="text" placeholder="Enter GPA (if applicable)" id="Gpa" name="gpa"><br>
+                    <button type="button" id="submit" onclick = "addStudentAJAX()">Submit</button>
+                    <!-- <input type = "submit" id = "submit" onclick="getValues();"> -->
+                    <!-- <button type="submit" id="submit" onclick="getValues()">Submit</button> -->
+
+                    <p id="displayInput"></p>
+
+                </form>
+            </div>
+            <pre>                                          <!--Legend makes it like a description, em makes it italic, u underlines-->
+                    <div type="text" id="output" style="display: none"><legend><em><u>Students Name : GPA</u></em></legend> </div>
+                </pre>
+
+        </div>
+    </div>
+
 
 </body>
 
