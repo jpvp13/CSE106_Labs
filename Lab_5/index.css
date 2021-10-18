@@ -79,7 +79,7 @@ body {
     font-size: 40px;
     width:60vh;
     height: 40vh;
-    background-color: green;
+    /* background-color: green; */
     text-align: center;
     /* margin-top:5vh ; */
     transform: translate(-60vh, 100px);
@@ -89,7 +89,7 @@ body {
     font-size: 40px;
     width:60vh;
     height: 40vh;
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     text-align: center;
     /* margin-top:-3vh ; */
     transform: translate(-60vh, 100px);
@@ -99,7 +99,7 @@ body {
     font-size: 40px;
     width:60vh;
     height: 40vh;
-    background-color: white;
+    /* background-color: white; */
     text-align: center;
     /* margin-top:-3vh ; */
     transform: translate(-60vh, 15vh);
@@ -109,7 +109,7 @@ body {
     font-size: 40px;
     width:60vh;
     height: 40vh;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     text-align: center;
     margin-top:-3vh ;
     transform: translate(-60vh, 15vh);
@@ -129,7 +129,7 @@ body {
 
 /* This will handle the output area */
 #output {
-    background-color: blueviolet;
+    background-color: lightblue;
     text-align: center;
     font-size: 30px;
     width:90vh;
@@ -140,7 +140,7 @@ body {
 
 #outputGetAll {
     grid-template-columns: auto auto;
-    background-color: red;
+    background-color: lightblue;
     text-align: center;
     font-size: 30px;
     width:150vh;
