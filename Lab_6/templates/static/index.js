@@ -14,9 +14,7 @@ function addStudentAJAX(){   //!this is the orignal and works correctly
     fullName = document.getElementById("fullNameADD").value;
     grade = document.getElementById("GradeADD").value;
 
-    
 
-    // console.log("from within add student, we get " + fullName + "and " + grade + "when we use a seperate function");
     colonCount = countOccurances(grade, ".");
     if(fullName === "" & grade === ""){
         console.log("TESTTEST")
@@ -26,32 +24,32 @@ function addStudentAJAX(){   //!this is the orignal and works correctly
         document.getElementById("displayInputADD").innerHTML = "You did not enter anything into the Full Name input bar before pressing submit. Please enter at least one value."
 
     }else if(grade === ""){
-        document.getElementById("displayInputADD").innerHTML = "You did not enter anything into the grade input bar before pressing submit. Please enter at least one value."
+        document.getElementById("displayInputADD").innerHTML = "You did not enter anything into the Grade input bar before pressing submit. Please enter at least one value."
 
-    }else if(/\d/.test(fullName) == true  & /^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z])*/mg.test(grade) == true ){  //!checks if both inputs have wrong values (######Allow for periods as some people have those in their names####)
+    }else if((/\d/.test(fullName) == true)  & /^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z]|\/)*/mg.test(grade) == true ){  //!checks if both inputs have wrong values (######Allow for periods as some people have those in their names####)
 
-        document.getElementsByClassName("displayInputADD").innerHTML = "Both fields have incorrect values within them. Please check both of your inputs."
+        document.getElementById("displayInputADD").innerHTML = "Both fields have incorrect values within them. Please check both of your inputs."
 
         // console.log("Inside test 1")
 
-    }else if(/\d/.test(fullName) == true){    //! checks to make sure the name input bar only has letters
+    }else if(/\d/.test(fullName) == true | /\//g.test(fullName) == true | /=/g.test(fullName) == true | /`/g.test(fullName) == true | /"/g.test(fullName) == true | /'/g.test(fullName) == true){    //! checks to make sure the name input bar only has letters
 
-        document.getElementsByClassName("displayInputADD").innerHTML = "A incorrect character was input in the name field. Please only use characters ranging from A-Z in the name field."
+        document.getElementById("displayInputADD").innerHTML = "A incorrect character was input in the name field. Please only use characters ranging from A-Z in the name field."
 
         // console.log("Inside test 2")
         // console.log("The input is a number")
 
-    }else if(/^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z])*/mg.test(grade) == true | (colonCount > 1)){   //!checks to make sure grade does not have letters
-
+    }else if(/^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z])*/mg.test(grade) == true){
         console.log("grade has a character inside of itself")
-        if(colonCount > 1){
+        document.getElementById("displayInputADD").innerHTML = "A letter was found in the grades input bar. Please only use integers inside of the grade field."
 
-            document.getElementsByClassName("displayInputADD").innerHTML = "To many colons were entered into the input bar. Only one (1) is allowed."
 
-        }else {
+    }else if(colonCount > 1){   //!checks to make sure grade does not have letters
 
-            document.getElementsByClassName("displayInputADD").innerHTML = "A incorrect character was input into the grade field. Please only use values ranging from 0-9 (including decimals) in the grade field."
-        }
+        
+
+        document.getElementById("displayInputADD").innerHTML = "To many colons were entered into the input bar. Only one (1) is allowed."
+
        
         // console.log("Inside test 3")
         // console.log("The type of grade is " + grade)
@@ -108,7 +106,7 @@ function getSpecificStudentAJAX(){
     
     fullName = document.getElementById("fullNameGetSpecific").value;
 
-    if(/\d/.test(fullName) == true){    //! checks to make sure the name input bar only has letters
+    if(/\d/.test(fullName) == true | /\d/.test(fullName) == true | /\//g.test(fullName) == true | /=/g.test(fullName) == true | /`/g.test(fullName) == true | /"/g.test(fullName) == true | /'/g.test(fullName) == true){    //! checks to make sure the name input bar only has letters
 
         document.getElementById("displayInputSpecific").innerHTML = "A incorrect character was input in the name field. Please only use characters ranging from A-Z in the name field."
 
@@ -156,7 +154,7 @@ function getSpecificStudentAJAX(){
 function getAllStudentsAJAX() { //!returns all students within server on screen for urser
     // clearContentsOfElements();
     const xhttp = new XMLHttpRequest();
-    document.getElementById("outputGetAll").innerHTML = "<legend><em><u>Students Name : GPA</u></em></legend> ";
+    document.getElementById("outputGetAll").innerHTML = "<legend><em><u>Students Name : Grade</u></em></legend> ";
     document.getElementById('outputGetAll').style.display = 'block';
     document.getElementById('output').style.display = 'none';
     
@@ -210,7 +208,7 @@ function updateStudentAJAX(){
         document.getElementById("displayInputUpdate").innerHTML = "You did not enter anything into the Full Name input bar before pressing submit. Please enter at least one value."
 
     }else if(newGPA === ""){
-        document.getElementById("displayInputUpdate").innerHTML = "You did not enter anything into the GPA input bar before pressing submit. Please enter at least one value."
+        document.getElementById("displayInputUpdate").innerHTML = "You did not enter anything into the Grade input bar before pressing submit. Please enter at least one value."
 
     }else if(/\d/.test(fullName) == true  & /^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z])*/mg.test(newGPA) == true ){  //!checks if both inputs have wrong values (######Allow for periods as some people have those in their names####)
 
@@ -218,27 +216,25 @@ function updateStudentAJAX(){
 
         // console.log("Inside test 1")
 
-    }else if(/\d/.test(fullName) == true){    //! checks to make sure the name input bar only has letters
+    }else if(/\d/.test(fullName) == true | /\d/.test(fullName) == true | /\//g.test(fullName) == true | /=/g.test(fullName) == true | /`/g.test(fullName) == true | /"/g.test(fullName) == true | /'/g.test(fullName) == true){    //! checks to make sure the name input bar only has letters
 
         document.getElementById("displayInputUpdate").innerHTML = "A incorrect character was input in the name field. Please only use characters ranging from A-Z in the name field."
 
         // console.log("Inside test 2")
         // console.log("The input is a number")
 
-    }else if(/^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z])*/mg.test(newGPA) == true | (colonCount > 1)){   //!checks to make sure GPA does not have letters
+    }else if(/^(\d+[a-zA-Z]|[a-zA-Z]+\d)(\d|[a-zA-Z])*/mg.test(newGPA) == true){
+
+        console.log("grade has a character inside of itself")
+        document.getElementById("displayInputADD").innerHTML = "A letter was found in the grades input bar. Please only use integers inside of the grade field."
+
+    }else if (colonCount > 1){   //!checks to make sure GPA does not have letters
 
         console.log("GPA has a character inside of itself")
-        if(colonCount > 1){
 
             document.getElementById("displayInputUpdate").innerHTML = "To many colons were entered into the input bar. Only one (1) is allowed."
 
-        }else {
 
-            document.getElementById("displayInputUpdate").innerHTML = "A incorrect character was input into the GPA field. Please only use values ranging from 0-9 (including decimals) in the GPA field."
-        }
-       
-        // console.log("Inside test 3")
-        // console.log("The type of GPA is " + newGpa)
     }else {
         console.log("passed all tests")
 
@@ -259,15 +255,6 @@ function updateStudentAJAX(){
 
 
         //!after this we are doing a get specific student search to return everything in JSON via the GET request
-
-        // xhttp.onload = function() {
-        //     // const myObj = JSON.stringify(JSON.parse(this.response), null, 2);   //! this converts my JSON response into a string and changes size
-
-        //     document.getElementById("output").innerHTML +=  fullName + ": " + newGPA;
-
-
-        // }
-        
 
         xhttp.onloadend = function() {
             const xhttp = new XMLHttpRequest();
@@ -304,7 +291,8 @@ function deleteStudentAJAX(){
     fullName = document.getElementById("fullNameDelete").value;
 
     
-    if(/\d/.test(fullName) == true){    //! checks to make sure the name input bar only has letters
+    // if(/\d/.test(fullName) == true | /\d/.test(fullName) == true | /\//g.test(fullName) == true | /=/g.test(fullName) == true | /`/g.test(fullName) == true | /"/g.test(fullName) == true | /'/g.test(fullName) == true){    //! checks to make sure the name input bar only has letters
+    if(/\d/.test(fullName) == true ){    //! checks to make sure the name input bar only has letters
 
         document.getElementById("displayInputDelete").innerHTML = "A incorrect character was input in the name field. Please only use characters ranging from A-Z in the name field."
 
@@ -342,10 +330,6 @@ function deleteStudentAJAX(){
         };
         
     }
-
-    // xhttp.open("DELETE","https://amhep.pythonanywhere.com/grades/" + fullName, true);
-    // xhttp.send();
-
 }
 
 
@@ -391,7 +375,7 @@ function showSearchBar_SpecificStudent(){
     document.getElementById('description').style.display = 'none';
 
 
-    document.getElementById("output").innerHTML = "<legend><em><u>Students Name : GPA</u></em></legend> ";
+    document.getElementById("output").innerHTML = "<legend><em><u>Students Name : Grade</u></em></legend> ";
 
 
 
@@ -409,7 +393,7 @@ function showSearchBar_UpdateStudent(){
 
 
 
-    document.getElementById("output").innerHTML = "<legend><em><u>Students Name : New GPA</u></em></legend> ";
+    document.getElementById("output").innerHTML = "<legend><em><u>Students Name : New Grade</u></em></legend> ";
 
     document.getElementById("searchBarUpdateStudent").style.display = "block";
     document.getElementById("output").style.display = "block";
@@ -426,7 +410,7 @@ function showSearchBar_DeleteStudent(){
 
 
 
-    document.getElementById("output").innerHTML = "<legend><em><u>Students Name : GPA</u></em></legend> ";
+    document.getElementById("output").innerHTML = "<legend><em><u>Students Name : Grade</u></em></legend> ";
 
     document.getElementById("searchBarDeleteStudent").style.display = "block";
 }
