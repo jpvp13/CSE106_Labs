@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- !REST API @ https://amhep.pythonanywhere.com   -->
+
+<html>
+<header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Student Info Home</title>
+
+
+
+
+    <!-- <link type = "text/css" href="{{ url_for('static', filename='main.css') }}"> Path to the CSS -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script> -->
+    <!-- <script type="text/javascript" src="{{url_for('static',filename='index.js')}}"></script> Path to the JS -->
+
+    <!-- <base href ="/"> -->
+    <!-- ! This is used for a local machine setup -->
+    <link href="static/main.css" rel="stylesheet" /> 
+    <script src="static/index.js"></script>
+    <!-- ! This is used for a local machine setup -->
+
+</header>
+
+<body>
+    <div id="Title-Wrapper">
+        <p id="Page-Title">Student Information Home Page</p>
+    </div>
+    <!-- This is where the buttons live -->
+    <div class="Action-Options">
+        <!-- <button id = "add-item" onclick = "addStudentAJAX()">Add Student</button> -->
+        <button type="submit" id="add-item" value="POST" onclick="showSearchBarAddStudent()">Add Student</button>
+        <button type="submit" id="get-Specific-item" value="GET" onclick="showSearchBar_SpecificStudent()">Get Specific
+            Student</button>
+        <button type="submit" id="get-All-item" value="GET" onclick="getAllStudentsAJAX()">Get All Student</button>
+
+        <!-- <button type = "submit" id = "get-All-item" value = "GET" onclick="getAllStudents()">Get All Student</button> -->
+        <button type="submit" id="update-Specific-item" value="PUT" onclick="showSearchBar_UpdateStudent()">Update
+            Student Info</button>
+        <button type="submit" id="delete-Specific-item" value="DELETE" onclick="showSearchBar_DeleteStudent()">Delete
+            Student</button>
+
+    </div>
+
+    <!-- This is where the input will be taken -->
+    <div class="inputANDoutput">
+
+        <div id="optionDisplay">Welcome to this record system!</div>
+        <p id="description">This is the home screen! To begin accessing students data, press one of the buttons above to
+            choose a action.</p>
+
+        <div id="show&hide">
+            <div id="searchBarAddStudent" style="display: none;">
+                <form  method="POST">
+                    <label for="Name" class="namePlaceholder" display: none>Name:</label>
+                    <input  placeholder="Enter Full Name (Case Sensative)" name="nameADD" id="fullNameADD" ><br>
+                    <label for="gpa" style=>Grade:</label>
+                    <input type="text" placeholder="Enter GPA (if applicable)" id="GradeADD" name="gradeADD"><br>
+                    <button type="button" class="submit" onclick="addStudentAJAX()">Submit</button>
+
+
+                    <p id="displayInputADD"></p>
+
+                </form>
+            </div>
+            <!-- ############################################################################################################################# -->
+            <div id="searchBarGetSpecificStudent" style="display: none;">
+                <form method="GET">
+                    <label for="Name" class="namePlaceholder" display: none>Name:</label>
+                    <input type="text" placeholder="Enter Full Name (Case Sensative)" id="fullNameGetSpecific"
+                        name="name"><br>
+                    <button type="button" class="submit" onclick="getSpecificStudentAJAX()">Submit</button>
+
+
+                    <p id="displayInputSpecific"></p>
+
+                </form>
+            </div>
+            <!-- ############################################################################################################################# -->
+            <div id="searchBarUpdateStudent" style="display: none;">
+                <form>
+                    <label for="Name" class="namePlaceholder" display: none>Name:</label>
+                    <input type="text" placeholder="Enter Full Name (Case Sensative)" id="fullNameUpdate"
+                        name="name"><br>
+                    <label for="gpa" style=>GPA:</label>
+                    <input type="text" placeholder="Enter New GPA (if applicable)" id="GpaUpdate" name="gpa"><br>
+                    <button type="button" class="submit" onclick="updateStudentAJAX()">Submit</button>
+
+                    <p id="displayInputUpdate"></p>
+
+                </form>
+            </div>
+            <!-- ############################################################################################################################# -->
+            <div id="searchBarDeleteStudent" style="display: none;">
+                <form>
+                    <label for="Name" class="namePlaceholder" display: none>Name:</label>
+                    <input type="text" placeholder="Enter Full Name (Case Sensative)" id="fullNameDelete"
+                        name="name"><br>
+                    <button type="button" class="submit" onclick="deleteStudentAJAX()">Submit</button>
+
+                    <p id="displayInputDelete"></p>
+
+                </form>
+            </div>
+            <pre>                                          <!--Legend makes it like a description, em makes it italic, u underlines-->
+                    <div type="text" id="output" style="display: none"><legend><em><u>Students Name : Grade</u></em></legend> </div>
+                    <div type="text" id="outputGetAll" style="display: none"><pre><legend><em><u>Students Name : Grade</u></em></legend> </pre>
+        </div>
+
+        </pre>
+
+    </div>
+    </div>
+
+
+</body>
+
+</html>
