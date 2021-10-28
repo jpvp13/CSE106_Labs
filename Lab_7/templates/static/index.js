@@ -170,9 +170,11 @@ function getAllStudentsAJAX() { //!returns all students within server on screen 
     xhttp.send();
 
     xhttp.onload = function() {
+        // const myObj = this.responseText;
         // const myObj =JSON.parse(this.responseText);
+        // console.log(myObj)
         const myObj = JSON.stringify(JSON.parse(this.responseText),null, 1);   //! this converts my JSON response into a string and changes size
-        // const myObj = this.responseText   //! this converts my JSON response into a string and changes size
+        // const myObj = JSON.stringify(this.responseText)   //! this converts my JSON response into a string and changes size
 
         let i = 0;
         for(i; i < myObj.length; i++){  //! this iterates through the length of the JSON response
@@ -433,6 +435,9 @@ function clear_Elements_For_Get_All(){
     document.getElementById("searchBarGetSpecificStudent").style.display = "none";
     document.getElementById("searchBarUpdateStudent").style.display = "none";
     document.getElementById("searchBarDeleteStudent").style.display = "none";
+    document.getElementById("description").style.display = "none";
+    description
+    
 }
 
 //~https://stackoverflow.com/questions/23476532/check-if-string-contains-only-letters-in-javascript
