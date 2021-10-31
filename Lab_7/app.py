@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, json, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 
-
+# python -m venv env   #! this allows us to enter back into the environment
 
 app = Flask(__name__, static_url_path='', static_folder='')
 app.config ['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///storage.sqlite'
@@ -27,7 +27,6 @@ def makeDict(studentTable):
 
 @app.route('/templates/index.html')
 def home():
-    db.create_all()
     return render_template('index.html')
     #! will create all tables
     
@@ -77,5 +76,6 @@ def deleteStudent(fullName):
     return makeDict(students.query.all())
 
 if __name__ == '__app__':
-    
+    db.create_all()
+
     app.run(debug=True)
